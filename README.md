@@ -8,6 +8,26 @@ This notebook runs through the process of using the `vanna` Python package to ge
 %pip install 'vanna[qdrant,ollama,mysql]'
 ```
 
+## Run Qdrant
+
+```
+docker run -p 6333:6333 -p 6334:6334 \
+    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
+    qdrant/qdrant
+```
+
+## Run Ollama
+
+```
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+
+## Download Model 
+
+```
+ollama run deepseek-r1:671b
+```
+
 ## Init Project
 
 ```
@@ -23,7 +43,7 @@ class MyVanna(Qdrant_VectorStore, Ollama):
         Ollama.__init__(self, config=config)
 
 # Instantiate the QdrantClient properly
-client = QdrantClient(url="http://192.168.110.216")
+client = QdrantClient(url="http://localhost")
 
 # Now pass the client object instead of the string representation
 vn = MyVanna(config={'client': client, 'model': 'deepseek-r1:8b'})
