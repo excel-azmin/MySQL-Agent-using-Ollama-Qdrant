@@ -36,7 +36,7 @@ vn.connect_to_mysql(host='localhost', dbname='sales_db', user='root', password='
 ```
 
 
-## Training
+## Training Agent
 
 
 ```
@@ -177,5 +177,6 @@ vn.ask(question="What are the last invoices?")
 
 ![image](https://github.com/user-attachments/assets/698b3cd4-ea4b-45c7-b511-56282fee28ce)
 
+## Response
 
 ![image](https://github.com/user-attachments/assets/40039bef-e694-4f25-a8df-4ea88c2a69e1)
