@@ -1,5 +1,5 @@
 
-# Generating SQL for MySQL Agent using Ollama, Qdrant
+# MySQL Agent using Ollama, Qdrant
 This notebook runs through the process of using the `vanna` Python package to generate SQL using AI (RAG + LLMs) including connecting to a database and training.
 
 ## Setup
